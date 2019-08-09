@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>CGPC</title>
+
+    <!-- update the version number as needed -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/css/style.css">
+    
+
+    
+
+    <!-- include only the Firebase features as you need -->
+    
+
+    <style media="screen">
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media screen and (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+        .login-form{
+          margin-top: 0;
+          padding: 50px;
+          background: white
+        }
+      }
+      html,body{
+        height: 100%;
+      }
+      .bg{
+        height: 100%;
+        background-image: url("src/img/bg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .row{
+        height: 100vh;
+        
+        
+      }
+      #login-screen{
+        display: none;
+      }
+      #home{
+        display: none;
+      }
+      .welcome{
+        
+
+        line-height: 1px;
+      }
+      .weltext{
+        font-size: 40pt;
+      }
+      .des{
+        font-family: monospace;
+      }
+      .login-form{
+        
+        padding: 50px;
+        background: white
+      }
+      .typewriter{
+        overflow: hidden;
+        border-right: .15em solid orange;
+        white-space: nowrap;
+        letter-spacing: .15em;
+        animation: 
+          typing 3.5s steps(40,end),
+          bink-carpet .75s step-end infinite
+      }
+      @keyframes typing{
+        from { width: 0 }
+        to { width: 100% }
+      }
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+      }
+      @-webkit-keyframes typing{
+        from { width: 0 }
+        to { width: 100% }
+      }
+      @-webkit-keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+      }
+      @keyframes typing{
+        from { width: 0 }
+        to { width: 100% }
+      }
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+      }
+    </style>
+  </head>
+  <body class="bg">
+    <div id="app" >
+      <div class="container" id="login-screen">
+        <div>
+          <div class="row align-items-center">
+            <div class="col-sm-6  welcome">
+              <div>
+                <div>
+                  <h1>Welcome</h1>
+                </div>
+                <span id="load" class="typewriter">code </span>
+              </div>
+
+            </div>
+            <div class="col-sm-6">
+              <div class="login-form">
+                
+                  <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                  </div>
+                  <button class="btn btn-primary" onclick="login()"> Login</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="home">
+        
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                </ul>
+                <span class="navbar-text">
+                  <button class="btn btn-danger" onclick="logout()">LOGOUT</button>
+                </span>
+              </div>
+            </nav>
+
+
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script>
+        
+
+        function change(){
+          if(app.value == 1){
+            app.message = "hello world"
+            app.value = -1
+            msg = "this is refreshed on " +new Date().toLocaleString()
+          }
+          else{
+            app.message = "hello Vue"
+            app.value =1
+            seen = false
+            msg = "this is refreshed on " +new Date().toLocaleString()
+          }
+        }
+
+        
+
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAth1JmFAkT-ruEgBVqfb2hBuL9j6enZDE",
+        authDomain: "cgpc-6615.firebaseapp.com",
+        databaseURL: "https://cgpc-6615.firebaseio.com",
+        projectId: "cgpc-6615",
+        storageBucket: "cgpc-6615.appspot.com",
+        messagingSenderId: "690210944501",
+        appId: "1:690210944501:web:8787147d294513e3"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+
+      
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="src/js/index.js"></script>
+
+    
+  </body>
+</html>
