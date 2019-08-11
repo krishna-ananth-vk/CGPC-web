@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -52,7 +51,7 @@
       #login-screen{
         display: none;
       }
-      #home{
+      #home-page{
         display: none;
       }
       .welcome{
@@ -104,9 +103,68 @@
         from, to { border-color: transparent }
         50% { border-color: orange; }
       }
+      .home{
+        padding-bottom: 30px;
+      }
+      .welcome-card{
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 30px;
+      }
+      .welcome-card > .head{
+        font-size: 20px;
+        
+        font-weight: 700;
+      }
+      .welcome-note{
+
+
+      }
+      .news-feed{
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 30px;
+      }
+      .news-feed-head{
+        font-size: 22px;
+        text-align: center;
+        padding: 3px;
+        border-block-color: black;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 3px;
+        font-weight: 500;
+      }
+      .connect-img{
+        
+        width: 400px;
+        margin-left:  auto;
+        margin-right: auto;
+        margin-bottom: 30px; 
+        display: block;
+      }
+      #placement{
+        display: none;
+      }
+      #recruiter{
+        display: none;
+      }
+      #company{
+        padding: 40px;
+        width: 50%;
+        
+      }
+      #company div{
+        margin:25px;
+      }
+      #company button{
+        float: right;
+
+      }
     </style>
   </head>
   <body class="bg">
+    
     <div id="app" >
       <div class="container" id="login-screen">
         <div>
@@ -130,41 +188,98 @@
                   <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" placeholder="Password">
+                    
                   </div>
-                  <button class="btn btn-primary" onclick="login()"> Login</button>
+                  <button class="btn btn-primary " onclick="login()" id="btn-login" > Login</button>
                 
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="container" id="home">
-        
+      <div class="container" id="home-page">
+          <nav class="navbar  navbar-expand-lg navbar-light bg-light">
 
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"  onclick="home()">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="placement()">Placement</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="recruiters()">Recruiters</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="academics()">Academics</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="username"></a>
+                </li>
+              </ul>
+              <span class="navbar-text">
+                <button class="btn btn-danger" onclick="logout()">LOGOUT</button>
+              </span>
+            </div>
+          </nav>
 
-              <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                </ul>
-                <span class="navbar-text">
-                  <button class="btn btn-danger" onclick="logout()">LOGOUT</button>
-                </span>
+
+          <!-- home block  -->
+          <div id="home">
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="welcome-card">
+                  <span class="head">Welcome to CGPC at Rajiv Gandhi Institute of Technology Kottayam</span>
+                  <div class="welcome-note">
+                      Rajiv Gandhi Institute of Technology, established in 1991, has reached an outstanding position in higher education sector in Kerala with profound achievements in post graduation and research activities. It is affiliated to APJ Abdul Kalam University, Thiruvananthapuram. Our alumni occupy top positions in industry, R&D and academia both in India and abroad. You would find talented candidates that suits all your requirements, and it will be our pleasure to support your recruitment efforts. Career Guidance and Placement Cell serves as an interface between graduating students and prospective employers.
+                  </div>
+                  <br><br><br>
+                  <img src="src/img/connect.jpg" alt="connect" class="connect-img">
+                </div>
               </div>
-            </nav>
+              <div class="col-sm-4">
+                <div class="news-feed">
+                    <div class="news-feed-head">
+                      News Feed
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- placement block  -->
+          <div id="placement">
+            <div class="row">
+              <div id="company">
+                
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- recruiters block  -->
+
+          <div id="recruiter">
+            <div class="row">
+              <ul>
+                <li>Amzon</li>
+                <li>Google</li>
+                <li>Microsoft</li>
+                <li>TCS</li>
+                <li>Infosys</li>
+              </ul>
+            </div>
+          </div>
+
+
 
 
       </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
     <script>
         
 
