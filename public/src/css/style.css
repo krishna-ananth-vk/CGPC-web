@@ -1,0 +1,149 @@
+  #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+  #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+  #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+  #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+  #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+  #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+  #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+  @media screen and (max-width: 600px) {
+    body, #message { margin-top: 0; background: white; box-shadow: none; }
+    
+    .login-form{
+      margin-top: 0;
+      padding: 50px;
+      background: white
+    }
+    
+  }
+  html,body{
+    height: 100%;
+  }
+  .bg{
+    height: 100%;
+    background-image: url("/src/img/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .columns{
+    height: 100vh;
+    
+    
+  }
+  #login-screen{
+    display: none;
+  }
+  #home-page{
+    display: none;
+  }
+  .welcome{
+    
+
+    line-height: 1px;
+  }
+  .weltext{
+    font-size: 40pt;
+  }
+  .des{
+    font-family: monospace;
+  }
+  .login-form{
+    
+    padding: 50px;
+    background: white
+  }
+  .typewriter{
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    letter-spacing: .15em;
+    animation: 
+      typing 3.5s steps(40,end),
+      bink-carpet .75s step-end infinite
+  }
+  @keyframes typing{
+    from { width: 0 }
+    to { width: 100% }
+  }
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+  @-webkit-keyframes typing{
+    from { width: 0 }
+    to { width: 100% }
+  }
+  @-webkit-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+  @keyframes typing{
+    from { width: 0 }
+    to { width: 100% }
+  }
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+  .home{
+    padding-bottom: 30px;
+  }
+  .welcome-card{
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 30px;
+  }
+  .welcome-card > .head{
+    font-size: 20px;
+    
+    font-weight: 700;
+  }
+  .welcome-note{
+
+
+  }
+  .news-feed{
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 30px;
+  }
+  .news-feed-head{
+    font-size: 22px;
+    text-align: center;
+    padding: 3px;
+    border-block-color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .connect-img{
+    
+    width: 400px;
+    margin-left:  auto;
+    margin-right: auto;
+    margin-bottom: 30px; 
+    display: block;
+  }
+  #placement{
+    display: none;
+    margin-top: 20px;
+  }
+  #recruiter{
+    display: none;
+  }
+  #company{
+    
+    
+  }
+  #company div{
+    margin:10px;
+  }
+  #company button{
+    float: right;
+
+  }
+.placement-nav{
+padding: 5px;
+}

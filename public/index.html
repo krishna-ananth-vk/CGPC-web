@@ -6,9 +6,10 @@
     <title>CGPC</title>
 
     <!-- update the version number as needed -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/css/style.css">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css" >
+    <link rel="stylesheet" href="src/css/style.css">
+  
 
     
 
@@ -16,160 +17,17 @@
     
 
     <style media="screen">
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media screen and (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-        .login-form{
-          margin-top: 0;
-          padding: 50px;
-          background: white
-        }
-      }
-      html,body{
-        height: 100%;
-      }
-      .bg{
-        height: 100%;
-        background-image: url("src/img/bg.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-      }
-      .row{
-        height: 100vh;
-        
-        
-      }
-      #login-screen{
-        display: none;
-      }
-      #home-page{
-        display: none;
-      }
-      .welcome{
-        
-
-        line-height: 1px;
-      }
-      .weltext{
-        font-size: 40pt;
-      }
-      .des{
-        font-family: monospace;
-      }
-      .login-form{
-        
-        padding: 50px;
-        background: white
-      }
-      .typewriter{
-        overflow: hidden;
-        border-right: .15em solid orange;
-        white-space: nowrap;
-        letter-spacing: .15em;
-        animation: 
-          typing 3.5s steps(40,end),
-          bink-carpet .75s step-end infinite
-      }
-      @keyframes typing{
-        from { width: 0 }
-        to { width: 100% }
-      }
-      @keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: orange; }
-      }
-      @-webkit-keyframes typing{
-        from { width: 0 }
-        to { width: 100% }
-      }
-      @-webkit-keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: orange; }
-      }
-      @keyframes typing{
-        from { width: 0 }
-        to { width: 100% }
-      }
-      @keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: orange; }
-      }
-      .home{
-        padding-bottom: 30px;
-      }
-      .welcome-card{
-        padding-left: 8px;
-        padding-right: 8px;
-        padding-top: 30px;
-      }
-      .welcome-card > .head{
-        font-size: 20px;
-        
-        font-weight: 700;
-      }
-      .welcome-note{
-
-
-      }
-      .news-feed{
-        padding-left: 8px;
-        padding-right: 8px;
-        padding-top: 30px;
-      }
-      .news-feed-head{
-        font-size: 22px;
-        text-align: center;
-        padding: 3px;
-        border-block-color: black;
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 3px;
-        font-weight: 500;
-      }
-      .connect-img{
-        
-        width: 400px;
-        margin-left:  auto;
-        margin-right: auto;
-        margin-bottom: 30px; 
-        display: block;
-      }
-      #placement{
-        display: none;
-      }
-      #recruiter{
-        display: none;
-      }
-      #company{
-        padding: 40px;
-        width: 50%;
-        
-      }
-      #company div{
-        margin:25px;
-      }
-      #company button{
-        float: right;
-
-      }
+      
+      
     </style>
   </head>
-  <body class="bg">
+  <body class="bg ">
     
     <div id="app" >
       <div class="container" id="login-screen">
-        <div>
-          <div class="row align-items-center">
-            <div class="col-sm-6  welcome">
+        
+          <div class="columns is-vcentered ful">
+            <div class="column">
               <div>
                 <div>
                   <h1>Welcome</h1>
@@ -178,67 +36,99 @@
               </div>
 
             </div>
-            <div class="col-sm-6">
+            <div class="column">
               <div class="login-form">
-                
-                  <div class="form-group">
-                    <label for="email">Email :</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email">
+                <div class="field">
+                  <label for="email" class="label">Email</label>
+                  <div class="control">
+                    <input type="email" class="input" id="email">
                   </div>
-                  <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                    
+                </div>
+
+                <div class="field">
+                  <label for="password" class="label">Password</label>
+                  <div class="control">
+                    <input type="password" class="input" id="password">
                   </div>
-                  <button class="btn btn-primary " onclick="login()" id="btn-login" > Login</button>
-                
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <button class="button is-link" onclick="login()" id="btn-login">Login</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        
       </div>
       <div class="container" id="home-page">
-          <nav class="navbar  navbar-expand-lg navbar-light bg-light">
-
-            <div class="collapse navbar-collapse" id="navbarText">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#"  onclick="home()">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="placement()">Placement</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="recruiters()">Recruiters</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="academics()">Academics</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" id="username"></a>
-                </li>
-              </ul>
-              <span class="navbar-text">
-                <button class="btn btn-danger" onclick="logout()">LOGOUT</button>
-              </span>
+          
+        <!-- navbar -->
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="https://bulma.io">
+                <img src="http://www.rit.ac.in/cgpcn/images/demo/heade1.jpg" width="112" height="28">
+              </a>
+          
+              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item" onclick="home()">
+                  Home
+                </a>
+          
+                <a class="navbar-item" onclick="placement()">
+                  Placement
+                </a>
+                <a class="navbar-item" onclick="recruiters()">
+                  Recruiters
+                </a>
+                <a class="navbar-item">
+                  Academics
+                </a>
+                <a class="navbar-item">
+                  Support
+                </a>
+          
+                
+              </div>
+          
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a class="button is-primary" id="username">
+                      
+                    </a>
+                    <a class="button is-danger" onclick="logout()">
+                      Logout
+                    </a>
+                    &nbsp;
+                  </div>
+                </div>
+              </div>
             </div>
           </nav>
 
-
           <!-- home block  -->
           <div id="home">
-            <div class="row">
-              <div class="col-sm-8">
+            <div class="columns">
+              <div class="column is-three-quarters">
                 <div class="welcome-card">
                   <span class="head">Welcome to CGPC at Rajiv Gandhi Institute of Technology Kottayam</span>
                   <div class="welcome-note">
                       Rajiv Gandhi Institute of Technology, established in 1991, has reached an outstanding position in higher education sector in Kerala with profound achievements in post graduation and research activities. It is affiliated to APJ Abdul Kalam University, Thiruvananthapuram. Our alumni occupy top positions in industry, R&D and academia both in India and abroad. You would find talented candidates that suits all your requirements, and it will be our pleasure to support your recruitment efforts. Career Guidance and Placement Cell serves as an interface between graduating students and prospective employers.
                   </div>
                   <br><br><br>
-                  <img src="src/img/connect.jpg" alt="connect" class="connect-img">
+                  <img src="src/img/connect.jpg" alt="connect" class="connect-img img-fluid">
                 </div>
               </div>
-              <div class="col-sm-4">
+              <div class="column">
                 <div class="news-feed">
                     <div class="news-feed-head">
                       News Feed
@@ -250,10 +140,26 @@
 
           <!-- placement block  -->
           <div id="placement">
-            <div class="row">
-              <div id="company">
-                
-              </div>
+            <div class="columns">
+              
+                <div class="column is-2">
+                  <div class="placement-nav">
+                    <aside class="menu">
+                      <ul class="menu-list">
+                        <li><a class="is-active">Registration</a></li>
+                        <li><a >Procedure</a></li>
+                        <li><a >Training</a></li>
+                      </ul>
+
+                    </aside>
+                  </div>
+                </div>
+                <div class="column ">
+                  <div id="company">
+                    
+                  </div>
+                </div>
+              
             </div>
           </div>
 
@@ -262,7 +168,7 @@
           <!-- recruiters block  -->
 
           <div id="recruiter">
-            <div class="row">
+            <div class="columns">
               <ul>
                 <li>Amzon</li>
                 <li>Google</li>
@@ -273,34 +179,58 @@
             </div>
           </div>
 
+          <!-- support block  -->
+
+          <div id="support">
+
+          </div>
+
+
+          <!-- profile block  -->
+
+          <div id="profile">
+
+          </div>
+
+
 
 
 
       </div>
     </div>
+    
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
     <script>
         
 
-        function change(){
-          if(app.value == 1){
-            app.message = "hello world"
-            app.value = -1
-            msg = "this is refreshed on " +new Date().toLocaleString()
-          }
-          else{
-            app.message = "hello Vue"
-            app.value =1
-            seen = false
-            msg = "this is refreshed on " +new Date().toLocaleString()
-          }
-        }
+       
 
         
 
       
       document.addEventListener('DOMContentLoaded', function() {
+
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+          // Add a click event on each of them
+          $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+
+              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+
+            });
+          });
+        }
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
         // // The Firebase SDK is initialized and available here!
         //

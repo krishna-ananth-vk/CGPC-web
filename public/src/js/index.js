@@ -1,6 +1,8 @@
 const auth = firebase.auth()
 const db = firebase.firestore();
-var loaed = false;
+const user = firebase.auth().currentUser;
+var load = false;
+var cgpa;
 auth.onAuthStateChanged(function(user){
     if(user){
         console.log("state changed");
@@ -13,6 +15,7 @@ auth.onAuthStateChanged(function(user){
             if(doc.exists){
                 var data = doc.data()
                 var name = data.Name
+                cgpa = data.cgpa
                 document.getElementById("username").innerHTML = name;
                 console.log(doc.data());
             }
@@ -49,7 +52,8 @@ function login(){
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorMessage);
-
+        document.getElementById("btn-login").innerHTML = "Login"
+        document.getElementById("btn-login").disabled = false;
         // window.alert(errorMessage);
         // ...
     });
@@ -93,23 +97,55 @@ function placement(){
 
 
     
-   if(!loaed){
+   if(!load){
     db.collection("company").get()
     .then(function (querySnapshot){
         querySnapshot.forEach(function(doc){
             
             var data = doc.data();
-            console.log(data.name);
+            console.log(data);
+            var flag = false;
+            var list = data.student;
+            list.forEach(function(value){
+                if(value==firebase.auth().currentUser.uid){
+                    flag = true;
+                }
+            })
             var item = document.createElement("DIV");
-            var itemData = data.name + "<button class='btn btn-success'>Apply</button>";
+            if(flag){
+                var itemData = data.name + "<button class='button is-success' title='Your cgpa is less than required'  disabled>Registered </button><br> CGPA : "+ data.CGPA;
+            }
+            else if (data.CGPA>cgpa) {
+                var itemData = data.name + "<button class='button is-danger' title='Your cgpa is less than required'  disabled>Register </button><br> CGPA : "+ data.CGPA;
+            } else {
+                var itemData = data.name + "<button class='button is-primary' onclick='apply(\""+doc.id+"\")' title='By applying you are agreeing to terms and conditions'>REGISTER</button><br> CGPA : "+ data.CGPA;
+            }
+
             item.innerHTML = itemData;
             document.getElementById("company").appendChild(item);
-            loaed = true;
+            load = true;
         });
     })
     .catch(function(error){
         console.log(error)
     })
    }
+
+}
+
+
+function profile(){
+    
+}
+function apply(id){
+    var ref = db.collection("company").doc(id);
+    ref.update({
+        student : firebase.firestore.FieldValue.arrayUnion(firebase.auth().currentUser.uid)
+    }).then(function(){
+        window.alert("Successfully registered for " + id);
+    }).catch(function(error){
+        console.log(error)
+    });
+    
 
 }
